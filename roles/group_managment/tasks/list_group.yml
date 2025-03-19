@@ -1,0 +1,12 @@
+---
+
+- name: List group
+  ansible.builtin.shell: "cut -d: -f1 /etc/group"
+  register: group_list
+  changed_when: false
+  tags: list_group
+
+- name: Show all system groups
+  ansible.builtin.debug:
+    msg: "{{ group_list.stdout_lines }}"
+  tags: list_group

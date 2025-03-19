@@ -1,0 +1,7 @@
+---
+
+- name: Delete a group
+  ansible.builtin.group:
+    name: "{{ group_name }}"
+    state: absent
+  tags: delete_group

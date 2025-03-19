@@ -1,3 +1,15 @@
 #SPDX-License-Identifier: MIT-0
 ---
-# tasks file for roles/group_managment
+# tasks file for roles/user_managment
+
+- name: Create group
+  ansible.builtin.include_tasks: create_group.yml
+  tags: create_group
+
+- name: Delete group
+  ansible.builtin.include_tasks: delete_group.yml
+  tags: delete_group
+
+- name: List group
+  ansible.builtin.include_tasks: list_group.yml
+  tags: list_group
