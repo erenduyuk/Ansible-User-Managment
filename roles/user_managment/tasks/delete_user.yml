@@ -1,0 +1,7 @@
+---
+
+- name: Delete a user
+  ansible.builtin.user:
+    name: "{{ username }}"
+    state: absent
+  tags: delete_user

@@ -1,0 +1,12 @@
+---
+
+- name: Get a list of all users
+  ansible.builtin.shell: "cut -d: -f1 /etc/passwd"
+  register: user_list
+  changed_when: false
+  tags: list_user
+
+- name: Show all system users
+  ansible.builtin.debug:
+    msg: "{{ user_list.stdout_lines }}"
+  tags: list_user

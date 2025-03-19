@@ -1,0 +1,9 @@
+---
+
+- name: Create a new user
+  ansible.builtin.user:
+    name: "{{ username  }}"
+    shell: "{{ user_shell | default('/bin/bash') }}"
+    groups: "{{ user_groups | default('sudo') }}"
+    state: present
+  tags: create_user

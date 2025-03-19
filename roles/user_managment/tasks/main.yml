@@ -1,0 +1,15 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for roles/user_managment
+
+- name: Create user
+  ansible.builtin.include_tasks: create_user.yml
+  tags: create_user
+
+- name: Delete user
+  ansible.builtin.include_tasks: delete_user.yml
+  tags: delete_user
+
+- name: List user
+  ansible.builtin.include_tasks: list_user.yml
+  tags: list_user
